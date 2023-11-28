@@ -18,12 +18,25 @@ const io = new Server(httpServer,{
 
 io.on("connection",(socket)=>{
     console.log(`User connected: ${socket.id}`);
+    //from client side
+    //need to pass the data to client to notify the user is enterd
+    socket.on("username enter",(data)=>{
+        console.log("username enter",data) ;
+        io.emit("username enter",data);//send the message to all the clients
+    });
+
+    socket.on("message",(data)=>{
+        io.emit("message",data);
+    });
+
+    socket.on("username left", (username) => {
+        io.emit("username left", username); // Emitting the username who left to all clients
+    });
+    
 });
 
 //socket-> to make connection
-// socket.on("message",(data)=>{
 
-// })
 
 
 httpServer.listen(3000,()=>{
