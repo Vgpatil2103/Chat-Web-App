@@ -88,3 +88,18 @@ font-size: 1.2rem;
     width: 50px;
     outline: none;
 }
+.messages{
+    display: flex;
+    flex-direction: column;
+    height: 82vh;
+    overflow-y: auto;
+}
+.message{
+    background-color: rgb(202, 197, 197);
+    width: fit-content;
+    padding: 0.5rem;
+    margin: 0.5rem;
+}
+.sent{
+    align-self: flex-end;
+}
