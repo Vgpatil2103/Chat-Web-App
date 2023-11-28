@@ -12,7 +12,7 @@ const httpServer=createServer(app);
 
 const io = new Server(httpServer,{
     cors:{
-        origin:'https://github.com'
+        origin:'http://127.0.0.1:5500'
     }
 });
 
